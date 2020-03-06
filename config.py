@@ -1,6 +1,7 @@
 import os
 
 appData = {
+    DEFAULT_WRITER_PASS = os.environ.get('DEF_USR_PASS')
 
 }
 
