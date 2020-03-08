@@ -1,8 +1,7 @@
 import os
 
 appData = {
-    DEFAULT_WRITER_PASS = os.environ.get('DEF_USR_PASS')
-
+    'DEFAULT_WRITER_PASS' : os.environ.get('DEF_USR_PASS')
 }
 
 
@@ -11,7 +10,7 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
 
     # email configurations
@@ -41,12 +40,8 @@ class ProdConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     # APP_URL = os.environ.get('APP_URL')
-    TESTING = False
-    MAIL_SUPPRESS_SEND = False
-    MAIL_DEBUG = False
-    DEBUG = False
 
 
 class TestConfig(Config):

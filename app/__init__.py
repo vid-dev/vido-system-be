@@ -48,10 +48,10 @@ def create_app(config_name):
     # configure UploadSet
     configure_uploads(app, photos)
 
-    if not app.debug:
-        error_logs_file = FileHandler('errorlog.txt', mode = 'a', delay = False, encoding = 'utf-8')
-        error_logs_file.setLevel(WARNING)
+    # if not app.debug:
+    #     error_logs_file = FileHandler('errorlog.txt', mode = 'a', delay = False, encoding = 'utf-8')
+    #     error_logs_file.setLevel(WARNING)
 
-        app.logger.addHandler(error_logs_file)
+    #     app.logger.addHandler(error_logs_file)
 
     return app
